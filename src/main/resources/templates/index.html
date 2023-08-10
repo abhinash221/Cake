@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakedelights</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" href="../static/css/index.css">
+    <script  th:src="@{/js/index.js}" src="../static/js/index.js"></script>
+</head>
+
+<body>
+<header>
+    <nav>
+        <a href="#"><img th:src="@{/images/logo.png}" src="../images/logo.png" alt="Delicious Cakes Logo"
+                         class="logo"></a>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#" th:href="@{/login}" sec:authorize="isAnonymous()">Login</a>
+                </li>
+                <li>
+                    <a href="#" th:href="@{/register}" sec:authorize="isAnonymous()">Register</a>
+                </li>
+                <li>
+                    <a href="#" th:href="@{/logout}" sec:authorize="isAuthenticated()">Logout</a>
+                </li>
+                <li>
+                    <a href="#" th:href="@{/shop}">Buy Now</a>
+                </li>
+                <li>
+                    <a href="#" th:href="@{/cart}">Cart</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to CakeDelights</h2>
+            <p>Indulge in the most mouthwatering cakes you've ever tasted!</p>
+            <a href="cakes" th:href="@{/shop}">
+                <H4 class="shop" th:href="@{/shop}">Buy Cakes</H4>
+            </a>
+        </div>
+    </section>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="../static/images/black_forest.jpg" alt="Image 1"th:src="@{/images/black_forest.jpg}">
+
+            </div>
+            <div class="slide">
+                <img src="../static/images/brown_butter_cake.jpg" alt="Image 2"th:src="@{/images/brown_butter_cake.jpg}">
+            </div>
+            <div class="slide">
+                <img src="../static/images/Cheese_cake.jpg" alt="Image 3"th:src="@{/images/Cheese_cake.jpg}">
+            </div>
+            <div class="slide">
+                <img src="../static/images/brown_butter_cake.jpg" alt="Image 4"th:src="@{/images/brown_butter_cake.jpg}">
+            </div>
+        </div>
+        <div class="controls">
+            <button class="prev-btn">Prev</button>
+            <button class="next-btn">Next</button>
+        </div>
+        <div class="dots">
+            <span class="dot active" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 Delicious Cakes. All rights reserved.</p>
+</footer>
+
+
+</body>
+
+</html>
